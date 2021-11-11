@@ -75,6 +75,7 @@ textarea {
 
 .container {
   width: 1140px;
+  max-width: 90%;
   margin: 0 auto;
 }
 
@@ -99,13 +100,6 @@ textarea {
 @media screen and (max-width: 810px) {
   .container {
     width: 650px;
-  }
-}
-
-@media screen and (max-width: 700px) {
-  .container {
-    width: 500px;
-    max-width: 90%;
   }
 }
 
@@ -219,56 +213,21 @@ textarea {
 
 .header {
   font-family: "Quicksand", sans-serif;
-  width: 100%;
   height: 10vh;
+  width: 100%;
+  padding: 0 5rem;
   position: fixed;
   top: 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  transition: 0.6s;
+  display: flex;
   align-items: center;
-  justify-items: center;
-}
-
-@media screen and (max-width: 700px) {
-  .header {
-    height: 7vh;
-    display: flex;
-    justify-content: space-between;
-    padding-left: 1rem;
-    padding-right: 5rem;
-  }
-}
-
-.header-logo {
-  padding-left: 3rem;
-}
-
-@media screen and (max-width: 400px) {
-  .header-logo {
-    opacity: 0;
-  }
-}
-
-.header-nav {
-  padding-right: 10rem;
-}
-
-@media screen and (max-width: 1440px) {
-  .header-nav {
-    padding-right: 8rem;
-  }
+  justify-content: space-around;
+  transition: 0.6s;
 }
 
 @media screen and (max-width: 810px) {
-  .header-nav {
-    padding-right: 4rem;
-  }
-}
-
-@media screen and (max-width: 700px) {
-  .header-nav {
-    padding: 0;
+  .header {
+    justify-content: space-between;
+    padding: 0 2.4rem;
   }
 }
 
@@ -337,7 +296,7 @@ textarea {
 
 .header-link-wrapper {
   cursor: pointer;
-  margin: 0 2rem;
+  margin-left: 4rem;
 }
 
 .header-link {
@@ -386,6 +345,10 @@ textarea {
   background-color: #1d293e;
   margin: 5px;
   transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle div:nth-of-type(2) {
+  background-color: #2ca46d;
 }
 
 /* ===============================
@@ -481,56 +444,65 @@ textarea {
           About
 =============================== */
 
-#about {
-  padding: 4rem 0;
-  background-color: #fafafa;
+.about {
+  background-color: #f7f7f7;
+  padding: 4rem;
 }
 
-#about .container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-content: center;
-  padding: 3rem 0;
-}
-
-@media screen and (max-width: 810px) {
-  #about .container {
-    grid-template-columns: 1fr;
-    grid-gap: 5rem;
+@media screen and (max-width: 1280px) {
+  .about {
+    padding: 4rem 3rem;
   }
 }
 
-.about-me {
-  padding-right: 3rem;
-}
-
-@media screen and (max-width: 810px) {
-  .about-me {
-    padding-right: 0;
+@media screen and (max-width: 992px) {
+  .about {
+    padding: 4rem 2rem;
   }
 }
 
 @media screen and (max-width: 600px) {
+  .about {
+    padding: 4rem 0;
+  }
+}
+
+.about-me {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media screen and (max-width: 810px) {
   .about-me {
+    grid-template-columns: 1fr;
+  }
+}
+
+.about-info {
+  padding: 0 4rem;
+}
+
+@media screen and (max-width: 1280px) {
+  .about-info {
+    padding: 0 3rem;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .about-info {
     padding: 0 2rem;
   }
 }
 
-@media screen and (max-width: 500px) {
-  .about-me {
-    padding: 0 5rem;
+@media screen and (max-width: 810px) {
+  .about-info {
+    padding: 2rem;
   }
 }
 
-@media screen and (max-width: 450px) {
-  .about-me {
-    padding: 0 7rem;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .about-me {
-    padding: 0 9rem;
+@media screen and (max-width: 810px) {
+  .about-info .secondary-txt {
+    text-align: left;
   }
 }
 
@@ -538,8 +510,8 @@ textarea {
   .about-me .buttons-wrapper {
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 1rem 0;
+    justify-content: flex-start;
+    padding: 1rem 0 3rem 0;
   }
 }
 
@@ -556,26 +528,19 @@ textarea {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding-left: 3rem;
+  padding: 0 4rem;
 }
 
 @media screen and (max-width: 810px) {
   .about-skills {
-    padding-left: 0;
+    padding: 0 2rem;
+    align-items: flex-start;
   }
 }
 
 .skills {
   display: flex;
   flex-wrap: wrap;
-}
-
-@media screen and (max-width: 810px) {
-  .skills {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    padding: 0 7rem;
-  }
 }
 
 .skill {
@@ -592,7 +557,7 @@ textarea {
 
 @media screen and (max-width: 400px) {
   .skill {
-    margin: 0 1rem 3rem 0;
+    margin: 0 0.5rem 3rem 0;
   }
 }
 
@@ -634,7 +599,13 @@ textarea {
   transition: all 0.5s ease-in-out;
 }
 
-@media screen and (max-width: 810px) {
+@media screen and (max-width: 1440px) {
+  .skill-label {
+    top: 80px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
   .skill-label {
     top: 70px;
   }
@@ -662,12 +633,7 @@ textarea {
 @media screen and (max-width: 810px) {
   .project {
     grid-template-columns: 1fr;
-  }
-}
-
-@media screen and (max-width: 40px) {
-  .project {
-    margin: 0 3rem;
+    margin: 0 1rem;
   }
 }
 
@@ -692,17 +658,20 @@ textarea {
   padding: 0 5rem 4rem 1rem;
 }
 
+@media screen and (max-width: 1280px) {
+  .project-description {
+    padding: 0 0 4rem;
+  }
+}
+
 @media screen and (max-width: 810px) {
   .project-description {
     width: 100%;
     padding: 0 5rem 3rem 5rem;
   }
 
-  .project-description .buttons-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem 0;
+  .project-description .secondary-txt {
+    text-align: left;
   }
 
   .project-description .buttons-wrapper .button {
@@ -739,6 +708,10 @@ textarea {
   grid-template-columns: 1fr 1fr;
   align-items: center;
   grid-gap: 4rem;
+}
+
+#contact .container {
+  max-width: 90%;
 }
 
 @media screen and (max-width: 700px) {
@@ -807,12 +780,6 @@ textarea {
   margin: 2rem 0 0 auto;
   display: block;
 }
-
-/* @media screen and (max-width: 700px) {
-  #form button {
-    margin: 0 auto;
-  }
-} */
 
 /* ===============================
       Footer
