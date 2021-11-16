@@ -19,6 +19,7 @@
       src="https://kit.fontawesome.com/05e19053e3.js"
       crossorigin="anonymous"
     ></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
@@ -55,10 +56,10 @@
     </header>
     <!-- Header Home -->
     <section id="home" class="header-home container">
-      <div class="header-home-img">
-        <img src="/images/me.png" alt="Photo of Aleksandar Buhinjak" />
+      <div class="header-home-img" data-aos="fade-right">
+        <img src="/images/header-home.png" alt="Photo of Aleksandar Buhinjak" />
       </div>
-      <div class="header-home-content">
+      <div data-aos="fade-left" class="header-home-content">
         <div class="header-home-content-text">
           <span class="h3-header-home">hello !</span>
           <h1 class="h1-header-home">I'm Aleksandar</h1>
@@ -73,7 +74,7 @@
     <!-- =================================
                       About
          ================================= -->
-    <section id="about">
+    <section id="about" class="about">
       <div class="section-title-wrapper">
         <h2 class="primary-txt">About Me</h2>
         <div class="title-line"></div>
@@ -81,8 +82,8 @@
           Here you will find more information about me and my current skills
         </p>
       </div>
-      <div class="container">
-        <div class="about-me">
+      <div class="about-me">
+        <div class="about-info" data-aos="fade-right">
           <h3 class="secondary-txt">Get to know me!</h3>
           <p class="lead">
             I'm Aleksandar Buhinjak,
@@ -108,7 +109,7 @@
             <a href="#projects" class="button button-light">My Work</a>
           </div>
         </div>
-        <div class="about-skills">
+        <div class="about-skills" data-aos="fade-left">
           <h3 class="secondary-txt">My Skills</h3>
           <div class="skills">
             <div class="skill">
@@ -162,13 +163,13 @@
         </p>
       </div>
       <div class="project">
-        <div class="project-img">
+        <div class="project-img" data-aos="fade-up">
           <img
             src="/images/optimus-mockup.jpg"
             alt="Optimus - Knjigovodstveni servis za obrtnike"
           />
         </div>
-        <div class="project-description">
+        <div class="project-description" data-aos="fade-up">
           <h2 class="secondary-txt">Optimus</h2>
           <p class="lead">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum,
@@ -181,21 +182,6 @@
               >Case Study</a
             >
           </div>
-
-          <!-- <div class="buttons-wrapper">
-              <a
-                href="https://github.com/abuhinjak/Optimus.git"
-                target="_blank"
-                class="button button-light"
-                >View Code</a
-              >
-              <a
-                href="https://optimusos.hr/"
-                class="button button-dark"
-                target="_blank"
-                >Visit Site</a
-              >
-            </div> -->
         </div>
       </div>
       <div class="project">
@@ -276,7 +262,9 @@
                 required
               ></textarea>
             </div>
-            <button class="button button-dark">Send Message</button>
+            <button type="submit" class="button button-dark submit">
+              Send Message
+            </button>
           </form>
         </div>
       </div>
@@ -290,6 +278,22 @@
         &copy; Copyright 2021 | Made by Aleksandar Buhinjak
       </p>
     </footer>
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Smooth Scroll -->
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15/dist/smooth-scroll.polyfills.min.js"></script>
     <script src="js/main.js"></script>
+    <!-- EmailJS -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("user_Ps3tErh1WTjyI5FSecJGW");
+      })();
+    </script>
+    <!-- Sweet Alert.js -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   </body>
 </html>

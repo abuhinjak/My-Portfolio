@@ -19,13 +19,94 @@
       src="https://kit.fontawesome.com/05e19053e3.js"
       crossorigin="anonymous"
     ></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css" />
   </head>
-  <body>
+  <body id="home">
+    <!-- =================================
+                      Contact Modal
+         ================================= -->
+    <div class="modal-wrapper">
+      <div class="contact-modal">
+       <span class="close-button">X</span>
+      <div class="contact-content">
+        <h2 class="primary-txt">Just say hi.</h2>
+        <div class="title-line"></div>
+        <p class="lead">
+          Feel free to contact me by submitting the form and I will get back
+          to you as soon as possible
+        </p>
+        <div class="contact-email">
+          <p class="small-txt">Email me at</p>
+          <p class="mailto">
+            <strong
+              ><a href="mailto:aleksandar.buhinjak@gmail.com"
+                >aleksandar.buhinjak@gmail.com</a
+              ></strong
+            >
+          </p>
+        </div>
+        <div class="contact-follow">
+          <p class="small-txt">Follow</p>
+          <div class="socials">
+            <div class="social">
+              <a
+                href="https://www.facebook.com/alexa.buhinjak/"
+                target="_blank"
+                ><i class="fab fa-facebook"></i
+              ></a>
+            </div>
+            <div class="social">
+              <a
+                href="https://www.linkedin.com/in/aleksandar-buhinjak/"
+                target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+            </div>
+            <div class="social">
+              <a href="https://github.com/abuhinjak" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="contact-form">
+        <form id="form" method="POST">
+          <div class="form-group">
+            <input
+              type="text"
+              placeholder="Your name*"
+              class="name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="email"
+              placeholder="Your email*"
+              class="email"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <textarea
+              class="message"
+              cols="30"
+              rows="5"
+              placeholder="How can I help?"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="button button-dark submit">Send Message</button>
+        </form>
+      </div>
+  </div>
+  </div>
     <!-- =================================
                       Header
          ================================= -->
-    <header class="header">
+    <header class="project-header">
       <!-- Logo -->
       <div class="header-logo">
         <a href="#home" class="logo-txt">Aleksandar Buhinjak</a>
@@ -34,168 +115,139 @@
       <div class="header-nav">
         <ul class="header-links">
           <li class="header-link-wrapper">
-            <a href="#home" class="header-link smoothscrool">Home</a>
+            <a href="/index.html" class="header-link smoothscrool"><i class="fas fa-long-arrow-alt-left"></i>Turn Back Home</a>
           </li>
           <li class="header-link-wrapper">
-            <a href="#about" class="header-link smoothscrool">About</a>
+            <a href="/index.html#projects" class="header-link smoothscrool">All Projects</a>
           </li>
-          <li class="header-link-wrapper">
-            <a href="#projects" class="header-link smoothscrool">Projects</a>
-          </li>
-          <li class="header-link-wrapper">
-            <a href="#contact" class="header-link smoothscrool">Contact</a>
+          <li class="header-link-wrapper trigger">
+            <a href="#" class="header-link smoothscrool">Contact</a>
           </li>
         </ul>
-      </div>
-      <div class="mobile-menu-toggle">
-        <!-- <div class="line1"></div>
-        <div class="line2"></div>
-        <div class="line3"></div> -->
+        <div class="mobile-menu-toggle">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
       </div>
     </header>
-    <!-- Header Home -->
-    <section id="home" class="header-home container">
-      <div class="header-home-img">
-        <img src="/images/me.png" alt="Photo of Aleksandar Buhinjak" />
-      </div>
-      <div class="header-home-content">
-        <div class="header-home-content-text">
-          <span class="h3-header-home">hello !</span>
-          <h1 class="h1-header-home">I'm Aleksandar</h1>
-          <h2 class="h2-header-home">frontend developer</h2>
-        </div>
-        <div class="buttons-wrapper">
-          <a href="#projects" class="button button-light">My Work</a>
-          <a href="#contact" class="button button-dark">Contact</a>
-        </div>
-      </div>
-    </section>
-    <!-- =================================
-                      About
-         ================================= -->
-    <section id="about">
-      <div class="section-title-wrapper">
-        <h2 class="primary-txt">About Me</h2>
-        <div class="title-line"></div>
+    <!-- Project Header -->
+    <section class="project-home">
+      <div class="project-home-content" data-aos="fade-up">
+        <h1 class="h1-header-home">Optimus</h1>
         <p class="lead">
-          Here you will find more information about me and my current skills
+          <em>Specialized bookkeeping service for craftsmen.</em>
         </p>
       </div>
-      <div class="container">
-        <div class="about-me">
-          <h3 class="secondary-txt">Get to know me!</h3>
-          <p class="lead">
-            I'm Aleksandar Buhinjak,
-            <strong>Front-end Web Developer</strong> building the Front-end of
-            Websites and Web Applications that leads to the success of the
-            overall product.
-            <br />
-            <br />
-            I like to <strong>resolve</strong> design problems,
-            <strong>create</strong> smart user interface and imagine useful
-            interaction, <strong>developing</strong> rich web experiences & web
-            applications. Check out some of my work in the
-            <strong>Projects section</strong>.
-            <br />
-            <br />
-            I'm <strong>open</strong> to Job opportunities where I can
-            contribute, learn and grow. If you have a good
-            <strong>opportunity</strong> that matches my skills and experience
-            then don't hesitate to <strong>contact me</strong>.
-          </p>
-          <a href="#contact" class="button button-dark">Let's Talk</a>
+    </section>
+    <!-- Project Overview -->
+    <section class="project-intro">
+      <div class="section-title-wrapper">
+        <h2 class="primary-txt">Project Overview</h2>
+        <p class="lead">
+          Since 1998, Optimus has been providing quality, reliable and up-to-date bookkeeping services for more than 200 statisfied users.
+        </p>
+        <div class="buttons-wrapper">
+          <a href="https://github.com/abuhinjak/first-portofilo" target="_blank" class="button button-light">Github Repo</a>
+          <a href="https://optimusos.hr/" target="_blank" class="button button-dark">Visit Website</a>
         </div>
-        <div class="about-skills">
-          <h3 class="secondary-txt">My Skills</h3>
-          <div class="skills">
-            <div class="skill">
-              <i class="fab fa-html5"></i>
-              <div class="skill-label">Content</div>
-            </div>
-            <div class="skill">
-              <i class="fab fa-css3-alt"></i>
-              <div class="skill-label">Style</div>
-            </div>
-            <div class="skill">
-              <i class="fab fa-sass"></i>
-              <div class="skill-label">Awesome</div>
-            </div>
-            <div class="skill">
-              <i class="fab fa-js"></i>
-              <div class="skill-label">Logic</div>
-            </div>
-            <div class="skill">
-              <i class="fab fa-react"></i>
-              <div class="skill-label">React.js</div>
-            </div>
-            <div class="skill">
-              <i class="fab fa-git-alt"></i>
-              <div class="skill-label">Git</div>
-            </div>
-            <div class="skill">
-              <i class="fab fa-github"></i>
-              <div class="skill-label">GitHub</div>
-            </div>
-            <div class="skill">
-              <i class="fas fa-mobile-alt"></i>
-              <div class="skill-label">RWD</div>
-            </div>
-          </div>
-        </div>
+        
       </div>
     </section>
-    <!-- =================================
-                      Projects
-         ================================= -->
-    <section id="projects">
-      <div class="container">
-        <div class="section-title-wrapper">
-          <h2 class="primary-txt">Projects</h2>
+    <!-- Project Info -->
+    <section class="project-info">
+      <div class="section-title-wrapper">
+        <p class="lead">Analysis & Preparation</p>
+        <h2 class="primary-txt">Branding</h2>
+      </div>
+      <div class="project-info-content" data-aos="fade-right">
+        <div class=".project-info-txt">
+          <h3 class="secondary-txt">My first challenge!</h3>
           <div class="title-line"></div>
           <p class="lead">
-            Here you will find some of the personal and clients projects that I
-            created with each project
+            My <strong>first project</strong>. It was a challenge to come up
+            with the design myself and then turn it into a finished product.
             <br />
-            containing its own case study
+            <br />
+            The only guidance I got from the client was that they want red and
+            black color to be dominant, the rest was up to me. Technologies I
+            used was
+            <strong>HTML5, CSS3</strong> and little bit of
+            <strong>JavaScript.</strong>
           </p>
         </div>
-        <div class="project">
-          <div class="project-img">
-            <img
-              src="/images/optimus-mockup.jpg"
-              alt="Optimus - Knjigovodstveni servis za obrtnike"
-            />
+        <div class="project-info-img" data-aos="fade-left">
+          <img src="/images/project-info.png" alt="Optimus website" />
+        </div>
+        </div>
+        <div class="project-info-colors">
+          <div class="color">
+            <div class="color-pallete optimus-color1"></div>
+            <div class="color-name">#F8002F</div>
           </div>
-          <div class="project-description">
-            <h2 class="secondary-txt">Optimus</h2>
-            <p class="lead">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum,
-              reiciendis! Rem impedit quos magni eum, aut officia odit
-              voluptates pariatur. Placeat dolores odio a reiciendis sed nostrum
-              necessitatibus aliquid fuga commodi dolorem et minima blanditiis
-              eligendi sint sunt consequatur illo animi, possimus laudantium! A
-              repellendus molestiae perspiciatis vel adipisci fugit!
-            </p>
-            <a href="#contact" class="button button-dark">Let's Talk</a>
-            <!-- <div class="buttons-wrapper">
-              <a
-                href="https://github.com/abuhinjak/Optimus.git"
-                target="_blank"
-                class="button button-light"
-                >View Code</a
-              >
-              <a
-                href="https://optimusos.hr/"
-                class="button button-dark"
-                target="_blank"
-                >Visit Site</a
-              >
-            </div> -->
+          <div class="color">
+            <div class="color-pallete optimus-color2"></div>
+            <div class="color-name">#ae040d</div>
+          </div>
+          <div class="color">
+            <div class="color-pallete optimus-color3"></div>
+            <div class="color-name">#fff</div>
+          </div>
+          <div class="color">
+            <div class="color-pallete optimus-color4"></div>
+            <div class="color-name">#f3f3f3</div>
+          </div>
+          <div class="color">
+            <div class="color-pallete optimus-color5"></div>
+            <div class="color-name">#000</div>
+          </div>
+        </div>
+        <div class="project-info-typo">
+          <div class="typo">
+            <img src="/images/poppins.png" alt="">
+          </div>
+          <div class="typo">
+            <img src="/images/muli.png" alt="">
+          </div>
+        </div>
+        <div class="project-info-design">
+          <div class="section-title-wrapper">
+            <p class="lead">UI & Components</p>
+            <h2 class="primary-txt">Design</h2>
+          </div>
+          <div class="project-info-images" data-aos="fade-up">
+              <img src="/images/project-design.png" alt="Optimus website Components">
+            </div>
           </div>
         </div>
       </div>
     </section>
-    <section id="contact"></section>
+
+    <!-- =================================
+                      Footer
+         ================================= -->
+
+    <footer class="main-footer">
+      <p class="small-txt">
+        &copy; Copyright 2021 | Made by Aleksandar Buhinjak
+      </p>
+    </footer>
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Smooth Scroll -->
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15/dist/smooth-scroll.polyfills.min.js"></script>
     <script src="js/main.js"></script>
+    <!-- EmailJS -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("user_Ps3tErh1WTjyI5FSecJGW");
+      })();
+    </script>
+    <!-- Sweet Alert.js -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   </body>
 </html>
