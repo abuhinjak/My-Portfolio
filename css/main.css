@@ -35,10 +35,15 @@ font-family: 'Quicksand', sans-serif;
   }
 }
 
+@media screen and (max-width: 600px) {
+  html {
+    overflow-x: hidden;
+  }
+}
+
 body {
   position: relative;
   overflow-x: hidden;
-  overflow-y: scroll;
   font-family: "Poppins", sans-serif;
   color: #1d293e;
 }
@@ -397,7 +402,8 @@ textarea {
 }
 
 @media screen and (max-width: 700px) {
-  .mobile-menu-toggle {
+  .header .mobile-menu-toggle,
+  .project-header .mobile-menu-toggle {
     padding: 0.5rem;
     display: block;
     cursor: pointer;
