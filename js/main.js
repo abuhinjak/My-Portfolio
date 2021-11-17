@@ -1,10 +1,26 @@
 // AOS
+/*
 AOS.init({
   offset: 80, // offset (in px) from the original trigger point
   delay: 0, // values from 0 to 3000, with step 50ms
   duration: 1000 // values from 0 to 3000, with step 50ms
 });
+*/
 // End AOS
+
+// Active Navigation Link
+const li = document.querySelectorAll(".header-link");
+const sec = document.querySelectorAll("section");
+
+function activeLink() {
+  let len = sec.length;
+  while(--len && window.scrollY + 400 < sec[len].offsetTop){}
+  li.forEach(ltx => ltx.classList.remove("current"));
+  li[len].classList.add("current");
+}
+activeLink();
+window.addEventListener("scroll", activeLink);
+// End Active Navigation Link
 
 // Mobile Menu 
 const navSlide = () => {
@@ -38,18 +54,8 @@ const navSlide = () => {
 });
 
 }
-
 navSlide();
-
-
 // End Mobile Menu
-
-// Smooth Scroll
-var scroll = new SmoothScroll('a[href*="#"]', {
-	speed: 800
-});
-var easeInOutQuad = new SmoothScroll('[data-easing="easeInOutQuad"]', {easing: 'easeInOutQuad'});
-// End Smooth Scroll
 
 
 // Sticky Navbar
@@ -59,21 +65,18 @@ window.addEventListener("scroll", function() {
 });
 // End Sticky Navbar
 
-// Active Navigation Link
-const li = document.querySelectorAll(".header-link");
-const sec = document.querySelectorAll("section");
-
-function activeLink() {
-  let len = sec.length;
-  while(--len && window.scrollY + 400 < sec[len].offsetTop){}
-  li.forEach(ltx => ltx.classList.remove("current"));
-  li[len].classList.add("current");
-}
-activeLink();
-window.addEventListener("scroll", activeLink);
-// End Active Navigation Link
+// Smooth Scroll
+var scroll = new SmoothScroll('a[href*="#"]', {
+	speed: 800
+});
+var easeInOutQuad = new SmoothScroll('[data-easing="easeInOutQuad"]', {easing: 'easeInOutQuad'});
+// End Smooth Scroll
 
 
+
+
+
+/*
 // Project Page - Contact Modal
 var modal = document.querySelector(".modal-wrapper");
 var trigger = document.querySelector(".trigger");
@@ -93,7 +96,8 @@ trigger.addEventListener("click", toggleModal);
 closeButton.addEventListener("click", toggleModal);
 window.addEventListener("click", windowOnClick);
 // End Contact Modal
-
+*/
+/*
 // EmailJS
 function validate() {
   let name = document.querySelector(".name");
@@ -152,3 +156,4 @@ function success() {
   });
 }
 // End EmailJS
+*/
