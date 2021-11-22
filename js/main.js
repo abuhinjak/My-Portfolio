@@ -1,13 +1,3 @@
-// AOS
-/*
-AOS.init({
-  offset: 80, // offset (in px) from the original trigger point
-  delay: 0, // values from 0 to 3000, with step 50ms
-  duration: 1000 // values from 0 to 3000, with step 50ms
-});
-*/
-// End AOS
-
 // Active Navigation Link
 const li = document.querySelectorAll(".header-link");
 const sec = document.querySelectorAll("section");
@@ -45,13 +35,23 @@ const navSlide = () => {
   });
 
   // Close menu when clicking outside
+
  document.addEventListener('click', function(event) {
   if (event.target !== headerNav && !headerNav.contains(event.target)) {
       // hide the menu
     nav.classList.remove("mobile-active");
     mobileMenu.classList.remove("toggle");
   }
+
+  document.onclick = function(e) {
+    if(e.target !== mobileMenu && e.target !== navLinks) 
+  {
+    mobileMenu.classList.remove('toggle');
+    nav.classList.remove('mobile-active')
+  } 
+  }
 });
+
 
 }
 navSlide();
@@ -65,6 +65,8 @@ window.addEventListener("scroll", function() {
 });
 // End Sticky Navbar
 
+
+
 // Smooth Scroll
 var scroll = new SmoothScroll('a[href*="#"]', {
 	speed: 800
@@ -72,14 +74,9 @@ var scroll = new SmoothScroll('a[href*="#"]', {
 var easeInOutQuad = new SmoothScroll('[data-easing="easeInOutQuad"]', {easing: 'easeInOutQuad'});
 // End Smooth Scroll
 
-
-
-
-
-/*
 // Project Page - Contact Modal
+var modalActive = document.querySelector(".trigger");
 var modal = document.querySelector(".modal-wrapper");
-var trigger = document.querySelector(".trigger");
 var closeButton = document.querySelector(".close-button");
 
 function toggleModal() {
@@ -88,72 +85,38 @@ function toggleModal() {
 
 function windowOnClick(event) {
   if (event.target === modal) {
-      toggleModal();
+    toggleModal();
   }
 }
-
-trigger.addEventListener("click", toggleModal);
+if(modalActive){
+modalActive.addEventListener("click", toggleModal);
+}
+if(closeButton){
 closeButton.addEventListener("click", toggleModal);
+}
 window.addEventListener("click", windowOnClick);
+
 // End Contact Modal
-*/
-/*
-// EmailJS
-function validate() {
-  let name = document.querySelector(".name");
-  let email = document.querySelector(".email");
-  let msg = document.querySelector(".message");
-  let btn = document.querySelector(".submit");
-  const re =
-    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-  btn.addEventListener("click", (e) => {
-    e.preventDefault();
-    if (name.value == "" || msg.value == "") {
-      emptyerror();
-    } else if (!(re.test(email.value.trim()))) {
-      error();  
-    } else {
-      sendmail(name.value, email.value, msg.value);
-      success();
-      name.value = "";
-      email.value = "";
-      msg.value = "";
+// Intersection Observer
+const cards = document.querySelectorAll('.card');
+    // card callback function
+const cardObserverCallback = (cardsToWatch, cardObserver) => {
+  cardsToWatch.forEach(cardToWatch => {
+    if(cardToWatch.isIntersecting) {
+      cardToWatch.target.classList.add('fade-in');
+      cardObserver.unobserve(cardToWatch.target);
     }
-  });
+  })
+};
+    // card options
+const cardObserverOptions = {
+  threshold: .5
 }
-validate();
-
-function sendmail(name, email, msg) {
-  emailjs.send("service_qxqxyxi", "template_njaj7of", {
-    to_name: name,
-    from_name: email,
-    message: msg,
-  });
-}
-
-function emptyerror() {
-  Swal.fire({
-    icon: "error",
-    title: "Oops...",
-    text: "Molimo popunite sva polja!",
-  });
-}
-
-function error() {
-  Swal.fire({
-    icon: "error",
-    title: "Oops...",
-    text: "Molimo Vas unesite ispravnu Email adresu!",
-  });
-}
-
-function success() {
-  Swal.fire({
-    icon: "success",
-    title: "Poslano!",
-    text: "Poruka je uspješno poslana",
-  });
-}
-// End EmailJS
-*/
+    // card observer
+const cardObserver = new IntersectionObserver(cardObserverCallback, cardObserverOptions);
+    // card observer on cards
+cards.forEach(card => {
+  cardObserver.observe(card);
+});
+// End Intersection Observer
