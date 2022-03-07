@@ -24,14 +24,14 @@ const navSlide = () => {
     // Hamburger Animation
     mobileMenu.classList.toggle("toggle");
     nav.classList.toggle("mobile-active");
-  });
     // Animate Links
   navLinks.forEach((link, index) => {
     if(link.style.animation) {
       link.style.animation = "";
     } else {
-      link.style.animation = `navLinkFade 1s ease ${index / 7 + 2}s forwards`;
+      link.style.animation = `navLinkFade .7s ease forwards ${index / 7 + 1.4}s`;
     }
+  });
   });
 
   // Close menu when clicking outside
