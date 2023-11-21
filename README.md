@@ -1,4 +1,4 @@
 # first-portofilo
 My first portfolio
 
-https://aleksandarbuhinjak.com/
+https://aleksandar.com.hr/
