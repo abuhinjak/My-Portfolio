@@ -12,7 +12,7 @@
     />
     <meta name="author" content="Aleksandar Buhinjak" />
     <meta name="google-site-verification" content="VrcoBgAuYYWw_wGT38F0AY2Lx2v-4p265RH5IOQVvJg" />
-    <link rel="stylesheet" href="css/main.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -97,8 +97,8 @@
       <div class="header-logo">
         <div class="logo-img">
           <a href="#home">
-            <img class="logo-dark" src="/images/logo.webp" alt="Logo" />
-            <img class="logo-white" src="/images/logo-white.webp" alt="Logo" />
+            <img class="logo-dark" src="images/logo.webp" alt="Logo" />
+            <img class="logo-white" src="images/logo-white.webp" alt="Logo" />
           </a>
         </div>
         <a href="#home" class="logo-txt">leksandar Buhinjak</a>
@@ -107,10 +107,10 @@
       <div class="header-nav">
         <ul class="header-links">
           <li class="header-link-wrapper">
-            <a href="/index.html" class="header-link smoothscrool"><i class="fas fa-long-arrow-alt-left"></i>Turn Back Home</a>
+            <a href="/" class="header-link smoothscrool"><i class="fas fa-long-arrow-alt-left"></i>Turn Back Home</a>
           </li>
           <li class="header-link-wrapper">
-            <a href="/index.html#projects" class="header-link smoothscrool">All Projects</a>
+            <a href="index.html#projects" class="header-link smoothscrool">All Projects</a>
           </li>
           <li class="header-link-wrapper trigger">
             <a href="#" class="header-link smoothscrool">Contact</a>
@@ -125,7 +125,7 @@
     </div>
     </header>
     <!-- Project Header -->
-    <section class="project-home">
+    <section class="project-home optimus">
       <div class="project-home-content card">
         <h1 class="h1-header-home">Optimus</h1>
         <p class="lead">
@@ -158,19 +158,19 @@
           <h3 class="secondary-txt">My first challenge!</h3>
           <div class="title-line"></div>
           <p class="lead">
-            My <strong><em>first project</em></strong>, it was a challenge to come up
+            My <span class="dark-color">first project</span>, it was a challenge to come up
             with the design myself and then turn it into a finished product.
             <br />
             <br />
             The only guidance I got from the client was that they want red and
             black color to be dominant, the rest was up to me. Technologies I
             used was
-            <strong><em>HTML5, CSS3</em></strong> and little bit of
-            <strong><em>JavaScript.</em></strong>
+            <span class="dark-color">HTML5, CSS3</span> and little bit of
+            <span class="dark-color">JavaScript</span>.
           </p>
         </div>
         <div class="project-info-img card">
-          <img src="/images/project-info.webp" alt="Optimus website" />
+          <img src="images/project-info.webp" alt="Optimus website" />
         </div>
         </div>
         <div class="project-info-colors card">
@@ -197,10 +197,10 @@
         </div>
         <div class="project-info-typo card">
           <div class="typo">
-            <img src="/images/poppins.webp" alt="Poppins Font">
+            <img src="images/poppins.webp" alt="Poppins Font">
           </div>
           <div class="typo">
-            <img src="/images/muli.webp" alt="Muli Font">
+            <img src="images/muli.webp" alt="Muli Font">
           </div>
         </div>
         <div class="project-info-design">
@@ -209,7 +209,7 @@
             <h2 class="primary-txt">Design</h2>
           </div>
           <div class="project-info-images">
-              <img src="/images/project-design.webp" alt="Optimus website Components">
+              <img src="images/project-design.webp" alt="Optimus website Components">
             </div>
           </div>
         </div>
@@ -222,7 +222,7 @@
 
     <footer class="main-footer">
       <p class="small-txt">
-        &copy; Copyright 2022 | Made by Aleksandar Buhinjak
+        &copy; Copyright <span id="current-year"></span> | Made by Aleksandar Buhinjak
       </p>
     </footer>
     <script src="https://kit.fontawesome.com/6296fa1a27.js" crossorigin="anonymous"></script>

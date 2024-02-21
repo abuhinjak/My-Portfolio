@@ -29,7 +29,7 @@ const navSlide = () => {
     if(link.style.animation) {
       link.style.animation = "";
     } else {
-      link.style.animation = `navLinkFade .7s ease forwards ${index / 7 + 1.4}s`;
+      link.style.animation = `navLinkFade .7s ease forwards ${index / 7 + 0.3}s`;
     }
   });
   });
@@ -120,3 +120,7 @@ cards.forEach(card => {
   cardObserver.observe(card);
 });
 // End Intersection Observer
+
+// Current year
+const currentYear = new Date().getFullYear();
+document.getElementById('current-year').innerText = currentYear;

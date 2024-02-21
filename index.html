@@ -15,13 +15,14 @@
       name="google-site-verification"
       content="VrcoBgAuYYWw_wGT38F0AY2Lx2v-4p265RH5IOQVvJg"
     />
-    <link rel="stylesheet" href="css/main.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <script src="js/main.js" defer></script>
   </head>
   <body>
     <!-- =================================
@@ -33,7 +34,7 @@
         <div class="header-logo">
           <div class="logo-img">
             <a href="#home">
-              <img src="/images/logo.webp" alt="Logo" />
+              <img src="images/logo.webp" alt="Logo" />
             </a>
           </div>
           <div class="logo-txt">
@@ -68,7 +69,7 @@
     <section id="home" class="header-home">
       <div class="container grid">
         <div class="header-home-img card">
-          <img src="/images//me.webp" alt="Photo of Aleksandar Buhinjak" />
+          <img src="images//me.webp" alt="Photo of Aleksandar Buhinjak" />
         </div>
         <div class="header-home-content card">
           <div class="header-home-content-text">
@@ -121,17 +122,17 @@
           <div class="about-info card">
             <h3 class="secondary-txt">Get to know me!</h3>
             <p class="lead">
-              I'm Aleksandar Buhinjak, Front-end Web Developer building the
-              Front-end of Websites and Web Applications that leads to the
+              I'm <span class="dark-color">Aleksandar Buhinjak</span>, Front-end Web Developer building the
+              <span class="dark-color">Front-end</span> of Websites and Web Applications that leads to the
               success of the overall product.
               <br />
               <br />
-              I like to resolve design problems, create smart user interface and
+              I like to <span class="dark-color">resolve</span> design problems, <span class="dark-color">create</span> smart user interface and
               imagine useful interaction, developing rich web experiences & web
-              applications. Check out some of my work in the Projects section.
+              applications. Check out some of my work in the <span class="dark-color">Projects section</span>.
               <br />
               <br />
-              I'm open to Job opportunities where I can contribute, learn and
+              I'm <span class="dark-color">open</span> to Job opportunities where I can contribute, learn and
               grow. If you have a good opportunity that matches my skills and
               experience then don't hesitate to contact me.
             </p>
@@ -162,6 +163,10 @@
               <div class="skill">
                 <i class="fab fa-react"></i>
                 <div class="skill-label">React.js</div>
+              </div>
+              <div class="skill">
+                <i class="fab fa-wordpress"></i>
+                <div class="skill-label">CMS</div>
               </div>
               <div class="skill">
                 <i class="fab fa-git-alt"></i>
@@ -195,11 +200,12 @@
             containing its own case study
           </p>
         </div>
-        <div class="project grid card">
+        <div class="project grid card mb-2">
           <div class="project-img">
             <img
-              src="/images/optimus-mockup.webp"
+              src="images/optimus-mockup.webp"
               alt="Optimus - Knjigovodstveni servis za obrtnike"
+              class="left"
             />
           </div>
           <div class="project-description">
@@ -212,14 +218,31 @@
               scratch using the frontend tools: HTML5, CSS3 and JavaScript.
             </p>
             <div class="buttons-wrapper">
-              <a href="/project-optimus.html" class="button button-dark"
+              <a href="project-optimus.html" class="button button-dark"
                 >Case Study</a
               >
             </div>
           </div>
         </div>
-        <div class="project">
-          <!-- New Project -->
+        <div class="project grid card reverse">
+          <div class="project-description">
+            <h2 class="secondary-txt">Tecta-gradnja</h2>
+            <p class="lead">
+              Tecta-gradnja is a construction company that has been operating since 2015. It is located in Osijek, Croatia.  I created their website from scratch using the frontend tools: HTML5, CSS3, JavaScript and WordPress.
+            </p>
+            <div class="buttons-wrapper">
+              <a href="project-tecta.html" class="button button-dark"
+                >Case Study</a
+              >
+            </div>
+          </div>
+          <div class="project-img">
+            <img
+              src="images/tecta-mockup.webp"
+              alt="Optimus - Knjigovodstveni servis za obrtnike"
+              class="right"
+            />
+          </div>
         </div>
       </div>
     </section>
@@ -288,7 +311,7 @@
               ></textarea>
             </div>
             <button type="submit" class="button button-dark submit">
-              Send Message
+              Send
             </button>
           </form>
         </div>
@@ -301,7 +324,7 @@
     <footer class="main-footer">
       <div class="container">
         <p class="small-txt">
-          &copy; Copyright 2022 | Made by Aleksandar Buhinjak
+          &copy; Copyright <span id="current-year"></span> | Made by Aleksandar Buhinjak
         </p>
       </div>
     </footer>
@@ -324,7 +347,7 @@
     <!-- Sweet Alert.js -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <!-- <script src="js/main.min.js"></script> -->
-    <script src="js/main.min.js"></script>
+    <!-- <script src="js/main.min.js"></script> -->
     <script src="js/email.min.js"></script>
   </body>
 </html>

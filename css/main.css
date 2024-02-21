@@ -88,13 +88,15 @@ textarea {
   color: #2ca46d;
 }
 .section-title-wrapper {
+  position: relative;
+  padding: 0 3rem 3rem;
   min-width: 70%;
   letter-spacing: 1px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 3rem 3rem;
+  z-index: 10;
 }
 @media screen and (max-width: 810px) {
   .section-title-wrapper {
@@ -123,10 +125,14 @@ textarea {
   color: #2ca46d;
 }
 .lead {
-  letter-spacing: 0.09rem;
+  letter-spacing: 0.04rem;
   font-size: 1rem;
   text-align: center;
   margin-bottom: 2rem;
+}
+.dark-color {
+  color: #1D293E;
+  font-weight: 500;
 }
 .title-line {
   width: 50px;
@@ -157,6 +163,10 @@ textarea {
 .fade-in {
   opacity: 1;
   transform: translateY(0);
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
 }
 
 /* ==============================
@@ -192,9 +202,9 @@ textarea {
   transition: all 0.3s ease-in-out;
 }
 .button-dark:hover {
-  color: #1d293e;
-  border: 2px #fff solid;
-  background-color: #fff;
+  color: #fff;
+  border: 2px solid #1D293E;
+  background-color: #1D293E;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
 
@@ -485,13 +495,14 @@ textarea {
 }
 
 .header-home-img {
+  position: relative;
   display: flex;
   justify-content: flex-end;
   padding-right: 2rem;
 }
 .header-home-img img {
-  width: 60%;
-  background-image: url("../images/bg.webp");
+  width: 70%;
+  background-image: url("../images/blob.svg");
   background-position-x: 40%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -640,7 +651,7 @@ textarea {
 
 .about-me.grid {
   align-items: flex-start;
-  gap: 3rem;
+  gap: 7rem;
 }
 
 @media screen and (max-width: 992px) {
@@ -669,7 +680,7 @@ textarea {
   }
 }
 .about-me .lead {
-  text-align: justify;
+  text-align: left;
 }
 
 .about-skills {
@@ -718,7 +729,8 @@ textarea {
   background-color: #e44d26;
   border: 1px solid #e44d26;
 }
-.skill:hover:nth-of-type(2) {
+.skill:hover:nth-of-type(2),
+.skill:hover:nth-of-type(6) {
   background-color: #264de4;
   border: 1px solid #264de4;
 }
@@ -734,15 +746,15 @@ textarea {
   background-color: #5ed3f3;
   border: 1px solid #5ed3f3;
 }
-.skill:hover:nth-of-type(6) {
+.skill:hover:nth-of-type(7) {
   background-color: #e84d31;
   border: 1px solid #e84d31;
 }
-.skill:hover:nth-of-type(7) {
+.skill:hover:nth-of-type(8) {
   background-color: #1a1e22;
   border: 1px solid #1a1e22;
 }
-.skill:hover:nth-of-type(8) {
+.skill:hover:nth-of-type(9) {
   background-color: #57348f;
   border: 1px solid #57348f;
 }
@@ -770,14 +782,27 @@ textarea {
   .project {
     grid-template-columns: 1fr;
   }
+
+  .project.reverse {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }
 .project-img img {
   width: 100%;
+}
+
+.project-img img.left {
+  transform: translateX(-60px);
 }
 @media screen and (max-width: 810px) {
   .project-img {
     margin: 0 auto;
     width: 80%;
+  }
+
+  .project-img img.left {
+    transform: translateX(0);
   }
 }
 @media screen and (max-width: 500px) {
@@ -796,7 +821,7 @@ textarea {
 }
 
 .project-description .lead {
-  text-align: justify;
+  text-align: left;
 }
 
 /* ==============================
@@ -914,7 +939,7 @@ textarea {
 .project-header.sticky .header-logo .logo-dark {
   position: absolute;
   display: block;
-  top: 1px;
+  top: 2px;
   left: 1px;
 }
 
@@ -1035,12 +1060,28 @@ textarea {
 /* Project Home */
 .project-home {
   position: relative;
-  background: url(../images/project1.webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position-x: center;
   background-position-y: center;
   height: 80vh;
+}
+
+.project-home.optimus {
+  background: url('../images/project1.webp');
+}
+.project-home.tecta {
+  background: url('../images/tecta-project.webp');
+}
+
+.project-home.tecta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 .project-home-content {
   position: relative;
@@ -1058,6 +1099,13 @@ textarea {
   letter-spacing: 1px;
 }
 
+@media screen and (max-width: 500px) {
+  .project-home-content .h1-header-home {
+    font-size: 4rem;
+  }
+}
+
+
 .project-home-content .h2-header-home {
   padding-bottom: 1rem;
   letter-spacing: 1px;
@@ -1073,8 +1121,8 @@ textarea {
   color: #f7f7f7;
   padding: 4rem 1rem;
 }
-.project-intro::after {
-  content: "Optimus";
+.project-intro.optimus::after,
+.project-intro.tecta::after {
   color: #fff;
   position: absolute;
   top: 50%;
@@ -1084,9 +1132,16 @@ textarea {
   opacity: 0.1;
   z-index: 1;
 }
+.project-intro.optimus::after {
+  content: 'Optimus';
+}
+.project-intro.tecta::after {
+  content: 'Tecta-gradnja';
+  font-size: 8rem;
+}
 .project-intro .lead {
   width: 40%;
-  text-align: justify;
+  text-align: center;
   padding: 1rem 0 2rem 0;
 }
 @media screen and (max-width: 992px) {
@@ -1133,10 +1188,10 @@ textarea {
 .project-info-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 0 22rem;
+  padding: 0 15rem;
   align-items: center;
   justify-content: center;
-  grid-gap: 5rem;
+  grid-gap: 1rem;
 }
 @media screen and (max-width: 1600px) {
   .project-info-content {
@@ -1262,6 +1317,21 @@ textarea {
   background-color: #f3f3f3;
 }
 .optimus-color5 {
+  background-color: #000;
+}
+.tecta-color1 {
+  background-color: #006C20;
+}
+.tecta-color2 {
+  background-color: #3C3950;
+}
+.tecta-color3 {
+  background-color: #fff;
+}
+.tecta-color4 {
+  background-color: #EEE;
+}
+.tecta-color5 {
   background-color: #000;
 }
 .project-info-typo {
